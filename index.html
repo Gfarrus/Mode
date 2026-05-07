@@ -324,109 +324,130 @@ tr:hover {
 
 .timeline-item {
   position: relative;
+  padding: 1.5rem;
   margin-bottom: 2rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -2.4rem;
-  top: 0.5rem;
+  left: -2.5rem;
+  top: 1.5rem;
   width: 1rem;
   height: 1rem;
   background: var(--mode-green);
   border: 3px solid white;
   border-radius: 50%;
-  box-shadow: 0 0 0 3px var(--mode-teal);
+  box-shadow: 0 0 0 2px var(--mode-teal);
 }
 
 .timeline-date {
   font-family: 'DM Mono', monospace;
   font-size: 0.85rem;
   color: var(--mode-teal);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
 }
 
 /* Tags */
 .tag {
   display: inline-block;
-  background: var(--mode-green);
+  background: var(--mode-teal);
   color: white;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 1rem;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin: 0.25rem 0.25rem 0.25rem 0;
+  margin-top: 1rem;
 }
 
 .tag.teal {
   background: var(--mode-teal);
 }
 
+.tag.green {
+  background: var(--mode-green);
+}
+
 .tag.purple {
   background: var(--mode-purple);
-}
-
-/* Competitive Analysis */
-.comp-table {
-  overflow-x: auto;
-}
-
-.comp-table table {
-  min-width: 800px;
 }
 
 /* Footer CTA */
 .footer-cta {
   background: linear-gradient(135deg, var(--mode-purple), var(--mode-teal));
   color: white;
-  padding: 3rem;
+  padding: 4rem 3rem;
   border-radius: 16px;
-  margin-top: 4rem;
   text-align: center;
+  margin-top: 4rem;
 }
 
 .footer-cta h2 {
   color: white;
   border: none;
   padding: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.footer-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-code {
-  font-family: 'DM Mono', monospace;
-  background: rgba(0,0,0,0.1);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
+/* Lists */
 ul, ol {
-  margin-left: 1.5rem;
-  margin-top: 0.75rem;
+  margin: 1rem 0;
+  padding-left: 2rem;
 }
 
 li {
   margin: 0.5rem 0;
 }
 
-strong {
+/* Code */
+code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9em;
   color: var(--mode-teal);
-  font-weight: 600;
 }
 
+/* Footnote */
 .footnote {
   font-size: 0.85rem;
   color: #666;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section {
+    padding: 1.5rem;
+  }
+  
+  .timeline {
+    padding-left: 2rem;
+  }
 }
 </style>
 </head>
@@ -434,556 +455,485 @@ strong {
 
 <div class="container">
 
-<!-- HERO -->
+<!-- HERO HEADER -->
 <div class="hero">
   <div class="hero-content">
     <h1>MODE Argentina</h1>
-    <div class="tagline">Propuesta Integral de Desembarco y Escalamiento</div>
-    <div class="meta">
-      <strong>Operador Líder:</strong> Adsmart Media (19 años de trayectoria)<br>
-      <strong>Marca:</strong> MODE® — Nutrición de Precisión<br>
-      <strong>Origen:</strong> Brasil (Gummies vitamínicas premium)<br>
-      <strong>Target:</strong> Alta performance · CEOs · Deportistas · Biohackers<br>
-      <strong>Fecha:</strong> Mayo 2026
-    </div>
+    <div class="tagline">Propuesta de Desembarco Integral</div>
+    <div class="meta">Market Entry Operations (MEO) · Adsmart Media × Apex Nativa</div>
   </div>
 </div>
 
-<!-- EXECUTIVE SUMMARY -->
+<!-- RESUMEN EJECUTIVO -->
+<h2>Resumen Ejecutivo</h2>
+
 <div class="section">
-<h2>Executive Summary</h2>
+<p><strong>Producto:</strong> MODE® — Línea de suplementos funcionales de alta gama (gummies) para performance deportivo, recuperación y bienestar masculino. Origen: Brasil (certificación ANVISA). Tres SKUs iniciales: <strong>Perform</strong> (pre-workout), <strong>Build</strong> (recuperación muscular), <strong>Rest</strong> (sueño optimizado).</p>
 
-<p>Adsmart Media presenta la estrategia integral para el desembarco de <strong>MODE</strong> en el mercado argentino, posicionando a la marca brasileña de nutrición de precisión en el segmento premium de suplementos mediante un ecosistema orquestado de partners estratégicos, infraestructura logística certificada y performance media programática.</p>
-
-<div class="metrics-row">
-  <div class="metric-box">
-    <div class="metric-label">Inversión Inicial</div>
-    <div class="metric-value">USD 95K</div>
-  </div>
-  <div class="metric-box">
-    <div class="metric-label">Stock Inicial</div>
-    <div class="metric-value">80,000</div>
-    <span style="font-size: 0.85rem;">unidades</span>
-  </div>
-  <div class="metric-box">
-    <div class="metric-label">Timeline Lanzamiento</div>
-    <div class="metric-value">90</div>
-    <span style="font-size: 0.85rem;">días</span>
-  </div>
-  <div class="metric-box">
-    <div class="metric-label">Meta Año 1</div>
-    <div class="metric-value">25K</div>
-    <span style="font-size: 0.85rem;">unidades/mes</span>
-  </div>
-</div>
+<p><strong>Oportunidad de mercado:</strong> El mercado argentino de suplementos deportivos alcanzó USD 185 millones en 2025 (+18% YoY), con proyección USD 310 millones para 2030. Target: hombres 25-45 años, urban-centric, ingresos medios-altos (ABC1), adherentes a fitness/wellness.</p>
 
 <div class="highlight">
-<strong>Ventaja competitiva clave:</strong> Adsmart Media actúa como <code>operador de desembarco</code> full-service (Market Entry Operations), integrando compliance regulatorio (ANMAT), logística farmacéutica (Southpost), importación optimizada (Comex + ruta MERCOSUR 0% arancel) y activación digital (GOAT Agency + Adsmart Machine programática).
+<strong>Ventaja competitiva clave:</strong> Adsmart Media actúa como <code>operador de desembarco</code> full-service (Market Entry Operations), integrando compliance regulatorio (ANMAT), logística farmacéutica (Southpost), importación optimizada (Comex + ruta MERCOSUR 0% arancel) y activación digital (Adsmart Machine programática).
 </div>
 </div>
 
 <!-- MARCA MODE -->
-<h2>1. Identidad MODE® — Nutrición de Precisión</h2>
+<h2>1. Marca MODE® · Arquitectura de Productos</h2>
 
 <div class="section">
-<h3>1.1 Propuesta de Valor</h3>
+<h3>1.1 Posicionamiento</h3>
+<p><strong>Tagline:</strong> "Fuel Your Edge"</p>
+<p><strong>Territorio de marca:</strong> Optimización del rendimiento humano mediante ciencia aplicada, sin dogmas ni misticismo. MODE no vende "sueños fitness" — vende <em>outcomes medibles</em>.</p>
 
-<p>MODE® redefine la suplementación con <strong>gummies vitamínicas</strong> de alta biodisponibilidad, estética minimalista tech y narrativa de <em>"engranagem de precisão"</em> (cuerpo como máquina optimizable).</p>
-
-<h4>Pilares de marca:</h4>
+<h3>1.2 Tres Pilares (SKUs de lanzamiento)</h3>
 
 <div class="product-grid">
   <div class="product-card perform">
     <div class="product-header">
       <div class="product-name">PERFORM</div>
-      <div class="product-tagline">ATIVE — Energía Pre-Treino</div>
+      <div class="product-tagline">Pre-Workout Energizante</div>
     </div>
     <div class="product-body">
-      <p><strong>Activos clave:</strong></p>
+      <p><strong>Función:</strong> Maximizar rendimiento físico y mental pre-entrenamiento</p>
       <ul class="product-features">
-        <li>Cafeína 300mg</li>
-        <li>Citrulina 4,000mg</li>
-        <li>Beta-alanina 1,800mg</li>
+        <li>Cafeína anhidra 200mg + L-Teanina 100mg (focus sin jitters)</li>
+        <li>Beta-alanina 1.6g (buffer ácido láctico)</li>
+        <li>Citrulina malato 3g (vasodilatación, pump muscular)</li>
+        <li>Vitaminas B-Complex para metabolismo energético</li>
       </ul>
-      <p><strong>Target:</strong> Deportistas, emprendedores, profesionales de alta demanda cognitiva</p>
-      <p><strong>Formato:</strong> 60 gomas (1 goma = 1 dose)</p>
+      <p><strong>Formato:</strong> 60 gummies · Porción: 3 unidades · Sabor: Citrus Blast</p>
+      <p><strong>Precio sugerido:</strong> ARS $24,990 (USD 25 aprox.)</p>
     </div>
   </div>
 
   <div class="product-card build">
     <div class="product-header">
       <div class="product-name">BUILD</div>
-      <div class="product-tagline">CONSTRUA — Creatina</div>
+      <div class="product-tagline">Recuperación Muscular</div>
     </div>
     <div class="product-body">
-      <p><strong>Activos clave:</strong></p>
+      <p><strong>Función:</strong> Acelerar recuperación post-entrenamiento y síntesis proteica</p>
       <ul class="product-features">
-        <li>Creatina 3,000mg</li>
-        <li>Creapure® 99.9% pura</li>
-        <li>Monohidratada sin azúcar</li>
-        <li>Zero gluten</li>
+        <li>BCAAs 2:1:1 (Leucina 2g, Isoleucina 1g, Valina 1g)</li>
+        <li>Glutamina 3g (anti-catabolismo)</li>
+        <li>Creatina monohidrato 2.5g (volumen celular)</li>
+        <li>Colágeno hidrolizado Tipo I y III (articulaciones)</li>
       </ul>
-      <p><strong>Target:</strong> Atletas, bodybuilders, wellness enthusiasts</p>
-      <p><strong>Formato:</strong> 60 gomas (2 gomas = 1 dose)</p>
+      <p><strong>Formato:</strong> 60 gummies · Porción: 3 unidades · Sabor: Berry Fusion</p>
+      <p><strong>Precio sugerido:</strong> ARS $26,990 (USD 27 aprox.)</p>
     </div>
   </div>
 
   <div class="product-card rest">
     <div class="product-header">
       <div class="product-name">REST</div>
-      <div class="product-tagline">RECUPERE — Relaxamento</div>
+      <div class="product-tagline">Sueño Optimizado</div>
     </div>
     <div class="product-body">
-      <p><strong>Activos clave:</strong></p>
+      <p><strong>Función:</strong> Inducir sueño profundo y reparador sin dependencia</p>
       <ul class="product-features">
-        <li>L-Teanina GABA 200mg</li>
-        <li>Passiflora 100mg</li>
-        <li>Mg Glicinato 150mg</li>
+        <li>Melatonina 3mg (regulación ciclo circadiano)</li>
+        <li>Magnesio bisglicinato 200mg (relajación muscular)</li>
+        <li>L-Teanina 150mg (calma cerebral)</li>
+        <li>Extracto de Valeriana + Pasiflora (sedante natural)</li>
       </ul>
-      <p><strong>Target:</strong> Ejecutivos con estrés alto, insomnio, necesidad de recuperación nocturna</p>
-      <p><strong>Formato:</strong> 60 gomas</p>
+      <p><strong>Formato:</strong> 60 gummies · Porción: 2 unidades · Sabor: Lavender Mint</p>
+      <p><strong>Precio sugerido:</strong> ARS $22,990 (USD 23 aprox.)</p>
     </div>
   </div>
 </div>
 
-<div class="highlight">
-<strong>Diferenciación vs. competencia local:</strong> MODE no compite con suplementos en polvo tradicionales (Gentech, Star Nutrition) ni con marcas farmacéuticas masivas (Ensure, Centrum). Su territorio es el <strong>wellness tech premium</strong>, comparable a Athletic Greens o WHOOP en posicionamiento aspiracional.
+<div class="warning">
+<strong>⚠ Compliance regulatorio:</strong> Todos los productos requieren registro ANMAT previo a comercialización. Tiempos estimados: 45-60 días laborables post-presentación de dossier técnico. Comex Specialists gestiona trámite completo.
 </div>
 </div>
+
+<!-- TARGET & SIZING -->
+<h2>2. Target Audience & Market Sizing</h2>
 
 <div class="section">
-<h3>1.2 Estética Visual y Packaging</h3>
+<h3>2.1 Perfil de Consumidor Primario</h3>
 
-<p>El sistema de identidad MODE® se construye sobre:</p>
+<table>
+<tr>
+  <th>Dimensión</th>
+  <th>Definición</th>
+</tr>
+<tr>
+  <td><strong>Demográfico</strong></td>
+  <td>Hombres 25-45 años, ABC1, ingresos familiares $1.5M+ ARS/mes</td>
+</tr>
+<tr>
+  <td><strong>Geográfico</strong></td>
+  <td>CABA + GBA Norte (60%), Córdoba/Rosario (25%), resto urbano (15%)</td>
+</tr>
+<tr>
+  <td><strong>Psicográfico</strong></td>
+  <td>Early adopters, data-driven decision makers, seguidores de trends wellness, fitness enthusiasts (4-6 días/semana gym)</td>
+</tr>
+<tr>
+  <td><strong>Comportamental</strong></td>
+  <td>Compran online suplementos (80%+ del gasto), siguen influencers fitness, invierten en wearables (Whoop, Oura), consultan nutri deportivo</td>
+</tr>
+</table>
 
-<ul>
-  <li><strong>Logo:</strong> Isotipo "M" tridimensional con gradientes verde neón → turquesa</li>
-  <li><strong>Paleta cromática por producto:</strong>
+<h3>2.2 Market Sizing (TAM → SAM → SOM)</h3>
+
+<div class="metrics-row">
+  <div class="metric-box">
+    <div class="metric-label">TAM (Argentina)</div>
+    <div class="metric-value">$185M</div>
+    <span style="font-size: 0.85rem;">Mercado total suplementos 2025</span>
+  </div>
+  <div class="metric-box">
+    <div class="metric-label">SAM (Segmento)</div>
+    <div class="metric-value">$48M</div>
+    <span style="font-size: 0.85rem;">Performance + Recovery gummies</span>
+  </div>
+  <div class="metric-box">
+    <div class="metric-label">SOM (Año 1)</div>
+    <div class="metric-value">$960K</div>
+    <span style="font-size: 0.85rem;">0.5% market share target</span>
+  </div>
+  <div class="metric-box">
+    <div class="metric-label">Target Unidades</div>
+    <div class="metric-value">38,400</div>
+    <span style="font-size: 0.85rem;">12 meses operación</span>
+  </div>
+</div>
+
+<h3>2.3 Competencia Directa</h3>
+
+<table>
+<tr>
+  <th>Brand</th>
+  <th>Fortaleza</th>
+  <th>Debilidad</th>
+  <th>Posicionamiento Precio</th>
+</tr>
+<tr>
+  <td><strong>ENA Sport</strong></td>
+  <td>Líder mercado local, distribución masiva</td>
+  <td>Fórmulas conservadoras, formato polvo dominante</td>
+  <td>Premium-mid (ARS $18K-22K)</td>
+</tr>
+<tr>
+  <td><strong>Star Nutrition</strong></td>
+  <td>Portfolio amplio, awareness alto</td>
+  <td>Percepción calidad inconsistente</td>
+  <td>Mid-tier (ARS $12K-18K)</td>
+</tr>
+<tr>
+  <td><strong>Importados (ON, BSN)</strong></td>
+  <td>Status brand, fórmulas comprobadas</td>
+  <td>Precio prohibitivo post-devaluación, stock errático</td>
+  <td>Super premium (ARS $35K+)</td>
+</tr>
+<tr>
+  <td><strong>MODE® (posicionamiento)</strong></td>
+  <td>🎯 Formato gummy disruptivo, ciencia + convenience, precio competitivo vs. importados</td>
+  <td>Brand awareness cero, canal D2C puro (sin retail inicial)</td>
+  <td>Premium (ARS $22K-27K)</td>
+</tr>
+</table>
+</div>
+
+<!-- GO-TO-MARKET -->
+<h2>3. Estrategia de Go-To-Market</h2>
+
+<div class="section">
+<h3>3.1 Modelo de Negocio: D2C + Subscription</h3>
+
+<p><strong>Canal primario:</strong> eCommerce propio (Shopify) con logística 3PL integrada (Southpost).</p>
+
+<p><strong>Revenue streams:</strong></p>
+<ol>
+  <li><strong>One-time purchase:</strong> 60% de revenue inicial</li>
+  <li><strong>Subscription (recurrente):</strong> 40% de revenue (objetivo 6 meses: 50%+)
     <ul>
-      <li>PERFORM: Verde lima (#a4d93a) → amarillo flúor</li>
-      <li>BUILD: Turquesa (#00a3a3) → azul profundo</li>
-      <li>REST: Púrpura (#6b5b95) → violeta oscuro</li>
+      <li>Descuento 15% sobre precio unitario</li>
+      <li>Envío gratis CABA/GBA</li>
+      <li>Cancelación sin penalidad</li>
     </ul>
   </li>
-  <li><strong>Packaging:</strong> Pouches metalizados tipo doypack con zipper resellable, tipografía sans-serif ultra-limpia, iconografía minimalista</li>
-  <li><strong>Formato:</strong> 60 gummies por pouch (vs. 30 cápsulas de productos en cápsula)</li>
-</ul>
+  <li><strong>Bundles:</strong> Perform + Build + Rest stack (ARS $69,990 vs. $74,970 individual → 7% off)</li>
+</ol>
 
-<p class="footnote"><strong>Ventaja logística:</strong> El formato gummy + pouch flexible reduce costos de flete vs. frascos de vidrio/PET rígido y mejora la experiencia de unboxing para contenido social orgánico.</p>
-</div>
-
-<!-- ANÁLISIS DE MERCADO -->
-<h2>2. Oportunidad de Mercado: Argentina Wellness 2026</h2>
-
-<div class="section">
-<h3>2.1 Dimensionamiento del Mercado</h3>
-
-<table>
-<tr>
-  <th>Segmento</th>
-  <th>Tamaño de Mercado (USD/año)</th>
-  <th>CAGR 2024-2028</th>
-  <th>Penetración Digital</th>
-</tr>
-<tr>
-  <td>Suplementos deportivos</td>
-  <td>$180M</td>
-  <td>12%</td>
-  <td>45%</td>
-</tr>
-<tr>
-  <td>Vitaminas y minerales</td>
-  <td>$320M</td>
-  <td>8%</td>
-  <td>32%</td>
-</tr>
-<tr>
-  <td><strong>Wellness premium</strong></td>
-  <td><strong>$45M</strong></td>
-  <td><strong>22%</strong></td>
-  <td><strong>68%</strong></td>
-</tr>
-<tr>
-  <td>Total suplementos Argentina</td>
-  <td>$545M</td>
-  <td>11%</td>
-  <td>41%</td>
-</tr>
-</table>
-
-<p class="footnote">Fuente: Euromonitor International 2025, Argentine Health & Wellness Report Q1 2026</p>
-
-<div class="highlight">
-<strong>Insight clave:</strong> El segmento wellness premium (brands como Athletic Greens, OLLY, Hims&Hers que ingresaron post-pandemia) crece al <strong>22% anual</strong> en Argentina, impulsado por millennials/Gen Z de alto poder adquisitivo (CABA, Córdoba, Rosario) que priorizan prevención y rendimiento sobre tratamiento reactivo.
-</div>
-</div>
-
-<div class="section">
-<h3>2.2 Benchmark Competitivo</h3>
-
-<div class="comp-table">
-<table>
-<tr>
-  <th>Marca</th>
-  <th>Origen</th>
-  <th>Formato</th>
-  <th>PVP Promedio (ARS)</th>
-  <th>Posicionamiento</th>
-  <th>Fortaleza</th>
-  <th>Debilidad vs. MODE</th>
-</tr>
-<tr>
-  <td>Gentech</td>
-  <td>Argentina</td>
-  <td>Polvos/cápsulas</td>
-  <td>$15,000-22,000</td>
-  <td>Masivo gimnasios</td>
-  <td>Distribución física amplia</td>
-  <td>Estética anticuada, cero innovación en formatos</td>
-</tr>
-<tr>
-  <td>Star Nutrition</td>
-  <td>Argentina</td>
-  <td>Polvos/barras</td>
-  <td>$12,000-18,000</td>
-  <td>Deportivo accesible</td>
-  <td>Precio competitivo</td>
-  <td>Ausencia de narrativa wellness, packaging genérico</td>
-</tr>
-<tr>
-  <td>Athletic Greens</td>
-  <td>USA</td>
-  <td>Polvo (sachet)</td>
-  <td>$85,000</td>
-  <td>Ultra-premium</td>
-  <td>Brand equity global</td>
-  <td>Precio prohibitivo para mercado local, sabor polarizante</td>
-</tr>
-<tr>
-  <td>OLLY</td>
-  <td>USA</td>
-  <td>Gummies</td>
-  <td>$28,000-35,000</td>
-  <td>Wellness femenino</td>
-  <td>Formato gummy pionero</td>
-  <td>Baja disponibilidad (solo Farmacity), target muy femenino</td>
-</tr>
-<tr>
-  <td><strong>MODE®</strong></td>
-  <td><strong>Brasil</strong></td>
-  <td><strong>Gummies premium</strong></td>
-  <td><strong>$28,000-32,000</strong></td>
-  <td><strong>Performance tech</strong></td>
-  <td><strong>Estética única, origen MERCOSUR (0% arancel)</strong></td>
-  <td><strong>N/A (nuevo entrante)</strong></td>
-</tr>
-</table>
-</div>
-
-<div class="warning">
-<strong>⚠ Gap identificado:</strong> No existe en Argentina una marca de gummies con posicionamiento <em>tech/biohacking</em> orientada a hombres de alto rendimiento. OLLY captura el segmento femenino, Athletic Greens es inaccesible por precio, y las marcas locales carecen de innovación en producto y narrativa.
-</div>
-</div>
-
-<!-- ESTRATEGIA DE NEGOCIO -->
-<h2>3. Modelo de Negocio y Estructura de Ingresos</h2>
-
-<div class="section">
-<h3>3.1 Arquitectura Financiera</h3>
-
-<h4>Pricing Strategy:</h4>
+<h3>3.2 Pricing Strategy</h3>
 
 <table>
 <tr>
   <th>SKU</th>
-  <th>Costo Landed (USD)</th>
-  <th>Markup</th>
-  <th>PVP (ARS)</th>
-  <th>Margen Bruto</th>
+  <th>Cost Landed (USD)</th>
+  <th>Markup Target</th>
+  <th>Precio Final (ARS)</th>
+  <th>Margen Bruto %</th>
 </tr>
 <tr>
-  <td>PERFORM (60 gummies)</td>
-  <td>$6.80</td>
-  <td>3.2x</td>
-  <td>$36,000</td>
-  <td>69%</td>
+  <td>PERFORM</td>
+  <td>$1.85</td>
+  <td>11.5x</td>
+  <td>$24,990</td>
+  <td>91.3%</td>
 </tr>
 <tr>
-  <td>BUILD (60 gummies)</td>
-  <td>$6.80</td>
-  <td>2.9x</td>
-  <td>$32,000</td>
-  <td>66%</td>
+  <td>BUILD</td>
+  <td>$2.05</td>
+  <td>11.8x</td>
+  <td>$26,990</td>
+  <td>91.5%</td>
 </tr>
 <tr>
-  <td>REST (60 gummies)</td>
-  <td>$6.80</td>
-  <td>2.7x</td>
-  <td>$30,000</td>
-  <td>63%</td>
+  <td>REST</td>
+  <td>$1.65</td>
+  <td>12.5x</td>
+  <td>$22,990</td>
+  <td>92.0%</td>
 </tr>
 </table>
 
-<p class="footnote"><strong>Nota:</strong> Costos landed calculados sobre ruta marítima Brasil (MERCOSUR 0% arancel) + IVA 21% recuperable + fulfillment Southpost. Tipo de cambio: ARS/USD = 1,660 (mayo 2026).</p>
+<p class="footnote"><strong>Nota:</strong> Landed cost incluye FOB + flete + aduanas + tributos. Tipo de cambio base: ARS 1,110/USD (escenario conservador). Margen bruto considera fulfillment fee (10% revenue) y payment processing (3.5% revenue).</p>
 
-<h4>Split Payment con dLocal:</h4>
+<h3>3.3 Customer Acquisition Roadmap</h3>
 
-<p>La arquitectura de pagos permite:</p>
-
+<h4>Fase 1: Seeding & Validation (Pre-Launch · Mes -1)</h4>
 <ul>
-  <li><strong>Cobro local:</strong> Cliente paga en ARS vía Mercado Pago / tarjetas locales</li>
-  <li><strong>Split automático:</strong> dLocal divide el pago:
+  <li>Envío de 300 kits gratis a micro/macro-influencers fitness (tier 2-3, 10K-100K followers)</li>
+  <li>Generación UGC orgánico (reviews video, unboxing)</li>
+  <li>Landing page con waitlist + incentivo early bird (20% off primer pedido)</li>
+  <li>Soft launch en comunidad closed beta (500 emails calificados)</li>
+</ul>
+
+<h4>Fase 2: Launch Público (Mes 1-2)</h4>
+<ul>
+  <li>Meta Ads (Instagram/Facebook): 
     <ul>
-      <li>70% → Cuenta Brasil (MODE brand owner)</li>
-      <li>30% → Apex Nativa Argentina (operación local + comisión Adsmart)</li>
+      <li>Awareness: Lookalike de waitlist + interest targeting (fitness, wellness, suplementos)</li>
+      <li>Conversion: DPA retargeting + abandoned cart</li>
     </ul>
   </li>
-  <li><strong>Ventaja:</strong> MODE recibe USD en Brasil sin fricciones cambiarias, Adsmart/Apex retiene margen operativo en ARS</li>
+  <li>Google Performance Max: Shopping campaigns con product feed optimizado</li>
+  <li>Influencer tier 1: 2-3 macro-influencers (200K+ followers) con code promo único</li>
+  <li>PR: Notas pagas en Clarín, La Nación, IProfesional (target: ejecutivos, profesionales)</li>
+</ul>
+
+<h4>Fase 3: Escalamiento (Mes 3-6)</h4>
+<ul>
+  <li>Programática Adsmart Machine: Display + Video + Native en publishers premium (TN, Infobae, Ole)</li>
+  <li>CTV campaigns (Roku, Samsung TV Plus) targeting audiencias fitness/sports</li>
+  <li>Alianzas gym chains premium (Megatlon, SportClub) → sampling + co-marketing</li>
+  <li>Email marketing automation: nurturing flows (welcome, abandoned cart, win-back)</li>
+</ul>
+
+<h4>Fase 4: Retención & LTV Optimization (Mes 6+)</h4>
+<ul>
+  <li>Programa referral: descuento ARS $5,000 referee + referrer</li>
+  <li>Subscription push: incentivo upgrade one-time → recurring (gift gratis, envío prioritario)</li>
+  <li>Content marketing: blog SEO-optimized (temas: fitness, nutrición, sleep science)</li>
+  <li>Partnerships corporativos: wellness programs B2B (empresas 500+ empleados)</li>
 </ul>
 </div>
 
-<div class="section">
-<h3>3.2 Proyección de Ventas Año 1</h3>
-
-<table>
-<tr>
-  <th>Fase</th>
-  <th>Timeline</th>
-  <th>Unidades/Mes</th>
-  <th>Revenue Mensual (USD)</th>
-  <th>Inversión Media</th>
-</tr>
-<tr>
-  <td>Soft Launch</td>
-  <td>Jul-Ago 2026</td>
-  <td>800</td>
-  <td>$16,800</td>
-  <td>$5,000</td>
-</tr>
-<tr>
-  <td>Lanzamiento Público</td>
-  <td>Sep-Oct 2026</td>
-  <td>2,500</td>
-  <td>$52,500</td>
-  <td>$15,000</td>
-</tr>
-<tr>
-  <td>Escalado</td>
-  <td>Nov-Dic 2026</td>
-  <td>5,000</td>
-  <td>$105,000</td>
-  <td>$25,000</td>
-</tr>
-<tr>
-  <td>Operación Estable</td>
-  <td>Q1-Q2 2027</td>
-  <td>12,000</td>
-  <td>$252,000</td>
-  <td>$35,000</td>
-</tr>
-</table>
-
-<div class="highlight">
-<strong>Meta conservadora Año 1:</strong> 50,000 unidades vendidas = USD 1.05M revenue bruto = USD 680K margen neto (excluyendo costos de estructura y media). Break-even proyectado: Mes 9 (marzo 2027).
-</div>
-</div>
-
-<!-- ECOSISTEMA DE PARTNERS -->
-<h2>4. Ecosistema de Partners Estratégicos</h2>
+<!-- OPERATIONAL SETUP -->
+<h2>4. Infraestructura Operativa</h2>
 
 <div class="section">
-<p>Adsmart Media orquesta la operación integrando cuatro partners especializados:</p>
+<h3>4.1 Legal & Fiscal</h3>
+
+<h4>Estructura societaria</h4>
+<p><strong>Razón social:</strong> MODE Argentina S.A. (sociedad anónima, constituida vía escribano, inscripción IGJ)</p>
+<p><strong>CUIT:</strong> A generar post-constitución</p>
+<p><strong>Director Residente:</strong> Gonzalo Farrus (vía Adsmart Media, en función de Country Manager)</p>
+<p><strong>Tax compliance:</strong> Régimen General IVA (21%), Ganancias 35%, Ingresos Brutos CABA 3%</p>
+
+<h4>Registros regulatorios</h4>
+<ul>
+  <li><strong>ANMAT:</strong> Registro de establecimientos + Producto Suplemento Dietario (3 SKUs)</li>
+  <li><strong>SENASA:</strong> No aplica (productos no-alimentarios en definición regulatoria ANMAT)</li>
+  <li><strong>RNE:</strong> Registro Nacional de Establecimientos (requisito ANMAT)</li>
+  <li><strong>Responsable:</strong> Comex Specialists (gestoría especializada)</li>
+</ul>
+
+<h3>4.2 Supply Chain</h3>
+
+<h4>Ruta de importación optimizada</h4>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">Origen · Brasil</div>
+    <p><strong>Fabricante:</strong> Nutralab (São Paulo) — certificación ANVISA, GMP, ISO 22000</p>
+    <p><strong>MOQ:</strong> 80,000 unidades (mix de 3 SKUs)</p>
+    <p><strong>Lead time producción:</strong> 30 días hábiles post-PO</p>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">Transporte</div>
+    <p><strong>Modalidad:</strong> Marítimo Santos (BR) → Buenos Aires (AR)</p>
+    <p><strong>Transit time:</strong> 12-15 días</p>
+    <p><strong>Costo flete (FCL 20'):</strong> USD 1,800-2,200</p>
+    <p><strong>Ventaja MERCOSUR:</strong> 0% arancel (vs. 20.8% extra-bloque)</p>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">Nacionalización</div>
+    <p><strong>Despachante:</strong> Comex Specialists</p>
+    <p><strong>Tributos:</strong> IVA 21% (crédito fiscal recuperable), Tasa estadística 0.5%, Percepción Ganancias 6%</p>
+    <p><strong>Tiempo estimado:</strong> 5-7 días post-arribo puerto</p>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">Fulfillment</div>
+    <p><strong>3PL:</strong> Southpost (Tortuguitas, GBA Norte)</p>
+    <p><strong>Servicios:</strong> Storage, picking, packing, last-mile delivery integrado (Andreani, OCA, Correo Argentino)</p>
+    <p><strong>SLA entrega:</strong> 48-72hs CABA/GBA, 4-6 días interior</p>
+    <p><strong>Fee modelo:</strong> Storage (ARS $45/pallet/día) + Fulfillment (8% revenue)</p>
+  </div>
+</div>
+
+<h3>4.3 Tech Stack</h3>
 
 <div class="partners-grid">
   <div class="partner-card">
-    <span class="partner-tag">Logística</span>
-    <h4>Southpost</h4>
-    <p><strong>Alcance:</strong> Fulfillment farmacéutico certificado</p>
+    <span class="partner-tag">eCommerce</span>
+    <h4>Shopify Plus</h4>
+    <p><strong>Funcionalidades clave:</strong></p>
     <ul>
-      <li>Almacenamiento climatizado (15-25°C)</li>
-      <li>WMS integrado con Shopify</li>
-      <li>Pick & pack: USD 1.34/orden</li>
-      <li>Red last-mile nacional (Ocasa/Andreani)</li>
-      <li>Trazabilidad lote por lote</li>
+      <li>Multi-currency (ARS/USD)</li>
+      <li>Subscription engine (ReCharge app)</li>
+      <li>Facturación electrónica AFIP (Increase.app)</li>
+      <li>Analytics avanzado + pixel tracking</li>
     </ul>
-    <p class="footnote"><strong>Por qué Southpost:</strong> Única 3PL con certificación farmacéutica y API nativa para marketplaces DTC.</p>
   </div>
 
   <div class="partner-card">
-    <span class="partner-tag">Importación</span>
-    <h4>Comex Specialists</h4>
-    <p><strong>Alcance:</strong> Despacho aduanero y compliance regulatorio</p>
-    <ul>
-      <li>Gestión documental MERCOSUR (0% arancel)</li>
-      <li>Certificación SENASA de inocuidad alimentaria</li>
-      <li>Registro ANMAT de suplementos dietarios</li>
-      <li>Coordinación con despachante + depósito fiscal</li>
-    </ul>
-    <p class="footnote"><strong>Ventaja:</strong> Experiencia en ruta Brasil → Buenos Aires con productos de consumo regulados.</p>
+    <span class="partner-tag">Payments</span>
+    <h4>dLocal + MercadoPago</h4>
+    <p><strong>dLocal:</strong> Gateway principal — acepta tarjetas BR/UY/CL + wallet digital, settlement USD offshore</p>
+    <p><strong>MercadoPago:</strong> Fallback local — cuotas sin interés, QR, link de pago</p>
+    <p><strong>Fee blended:</strong> 3.5% transacción</p>
   </div>
 
   <div class="partner-card">
     <span class="partner-tag">Activación</span>
-    <h4>GOAT Marketing Agency</h4>
+    <h4>Adsmart Media - Marketing & Performance</h4>
     <p><strong>Alcance:</strong> Consumer activation y brand experience</p>
     <ul>
       <li><strong>Strategic Consulting:</strong> Posicionamiento local, análisis de insights</li>
       <li><strong>Creative:</strong> Campañas digitales, UGC, influencer seeding</li>
-      <li><strong>Performance Media:</strong> Coordinación con Adsmart Machine (DSP/Meta/Google)</li>
+      <li><strong>Performance Media:</strong> Adsmart Machine (DSP/Meta/Google)</li>
       <li><strong>Experiential:</strong> Pop-ups en gimnasios premium, eventos "MODE Labs"</li>
     </ul>
-    <p class="footnote"><strong>Fit estratégico:</strong> GOAT opera como brazo creativo mientras Adsmart ejecuta la programática y maneja data/optimization.</p>
+    <p class="footnote"><strong>Fit estratégico:</strong> Adsmart ejecuta la estrategia creativa, programática y maneja data/optimization integral.</p>
   </div>
 
   <div class="partner-card">
     <span class="partner-tag">Tech Stack</span>
     <h4>Shopify + dLocal + ERP</h4>
-    <p><strong>Alcance:</strong> Infraestructura digital end-to-end</p>
+    <p><strong>Alternativas evaluadas:</strong></p>
     <ul>
-      <li><strong>Shopify Plus:</strong> Marketplace DTC con subscriptions</li>
-      <li><strong>dLocal:</strong> Split payment BRL/ARS automático</li>
-      <li><strong>ERP local:</strong> Yiqui (opción recomendada) o Gastón WMS+TMS</li>
-      <li><strong>Facturación:</strong> AFIP-compliant, integración con Estudio DM (contable)</li>
+      <li><strong>Yiqui:</strong> SaaS argentino, integraciones pre-built marketplace, onboarding 2 semanas</li>
+      <li><strong>Gastón (custom dev):</strong> Sistema propietario con lógica negocio específica, mayor flexibilidad</li>
     </ul>
-    <p class="footnote"><strong>Decisión pendiente:</strong> Stack tecnológico final (Yiqui vs. Gastón) a definirse en mayo 2026.</p>
+    <p class="footnote"><strong>Decisión pendiente:</strong> Yiqui recomendado para velocidad go-to-market (MVP en 15 días vs. 45 días custom)</p>
   </div>
 </div>
 </div>
 
-<!-- ESTRATEGIA DE COMUNICACIÓN -->
-<h2>5. Estrategia de Comunicación Full-Funnel</h2>
+<!-- PARTNERS -->
+<h2>5. Ecosystem de Partners</h2>
 
 <div class="section">
-<h3>5.1 Arquitectura de Medios</h3>
+<h3>5.1 Partner Map</h3>
 
-<table>
-<tr>
-  <th>Fase Funnel</th>
-  <th>Canal</th>
-  <th>Objetivo</th>
-  <th>Budget Mensual</th>
-  <th>KPIs</th>
-</tr>
-<tr>
-  <td><strong>Awareness</strong></td>
-  <td>Influencer Marketing</td>
-  <td>Visibilidad en audiencias nicho (fitness, tech, emprendimiento)</td>
-  <td>$8,000</td>
-  <td>Reach, Impresiones, Brand mentions</td>
-</tr>
-<tr>
-  <td><strong>Awareness</strong></td>
-  <td>PR & Earned Media</td>
-  <td>Notas en medios verticales (Clarín Buena Vida, La Nación Bienestar)</td>
-  <td>$3,000</td>
-  <td>Coverage, Sentiment</td>
-</tr>
-<tr>
-  <td><strong>Consideration</strong></td>
-  <td>Performance Media (Adsmart Machine)</td>
-  <td>Tráfico calificado a Shopify</td>
-  <td>$12,000</td>
-  <td>CTR, CPC, CPM</td>
-</tr>
-<tr>
-  <td><strong>Consideration</strong></td>
-  <td>Social Ads (Meta/TikTok)</td>
-  <td>Engagement, UGC amplification</td>
-  <td>$7,000</td>
-  <td>Engagement Rate, Video Views</td>
-</tr>
-<tr>
-  <td><strong>Conversion</strong></td>
-  <td>Retargeting + Email</td>
-  <td>Conversión de carrito abandonado</td>
-  <td>$4,000</td>
-  <td>ROAS, CPA, Conversion Rate</td>
-</tr>
-<tr>
-  <td><strong>Retention</strong></td>
-  <td>CRM + Subscriptions</td>
-  <td>Repeat purchase, LTV optimization</td>
-  <td>$2,000</td>
-  <td>Retention Rate, LTV/CAC</td>
-</tr>
-</table>
+<div class="partners-grid">
+  <div class="partner-card">
+    <span class="partner-tag">Fabricación</span>
+    <h4>Nutralab (Brasil)</h4>
+    <ul>
+      <li>GMP-certified manufacturer</li>
+      <li>Certificación ANVISA (equivalente ANMAT Brasil)</li>
+      <li>Capacidad: 2M unidades/mes</li>
+      <li>R&D in-house para custom formulations</li>
+    </ul>
+  </div>
 
-<div class="highlight">
-<strong>Adsmart Machine:</strong> Plataforma propietaria de Adsmart Media que integra DSP programático + attribution modeling + AI-driven budget allocation en tiempo real. Ventaja competitiva vs. agencias tradicionales: optimización automática de ROI sin intervención manual.
+  <div class="partner-card">
+    <span class="partner-tag">Logística</span>
+    <h4>Southpost</h4>
+    <ul>
+      <li>3PL farmacéutico especializado</li>
+      <li>Warehouse GBA Norte (Tortuguitas) — 5,000 m²</li>
+      <li>Integración API Shopify nativa</li>
+      <li>SLA 99.5% accuracy</li>
+    </ul>
+  </div>
+
+  <div class="partner-card">
+    <span class="partner-tag">Comex</span>
+    <h4>Comex Specialists</h4>
+    <ul>
+      <li>Gestoría especializada en suplementos</li>
+      <li>Track record ANMAT: 200+ registros aprobados</li>
+      <li>Servicio integral: despachante + ANMAT + SENASA</li>
+      <li>Timeline garantizado: 60 días o menos</li>
+    </ul>
+  </div>
+
+  <div class="partner-card">
+    <span class="partner-tag">Contable-Fiscal</span>
+    <h4>Estudio Contable (TBD)</h4>
+    <ul>
+      <li>Liquidación impuestos mensual (IVA, Ganancias, IIBB)</li>
+      <li>Facturación electrónica AFIP-compliant</li>
+      <li>Asesoría fiscal: créditos IVA, incentivos exportación</li>
+      <li>Fee mensual: USD 1,100</li>
+    </ul>
+  </div>
 </div>
 </div>
 
-<div class="section">
-<h3>5.2 Estrategia de Influencers</h3>
-
-<h4>Perfil de Creators:</h4>
-
-<ul>
-  <li><strong>Tier 1 (1 creator):</strong> Macro-influencer fitness/wellness con 200K+ followers (ej: Nicolás Solabarrieta, Candela Vetrano tipo fitness)
-    <ul>
-      <li>Fee: USD 5,000 + producto</li>
-      <li>Entregables: 3 posts + 5 stories + 1 Reel</li>
-    </ul>
-  </li>
-  <li><strong>Tier 2 (5 creators):</strong> Micro-influencers nicho (30-80K followers) en wellness, biohacking, emprendimiento
-    <ul>
-      <li>Fee: USD 800 c/u + producto</li>
-      <li>Entregables: 2 posts + 3 stories</li>
-    </ul>
-  </li>
-  <li><strong>Tier 3 (15 creators):</strong> Nano-influencers (5-20K) ultra-engaged
-    <ul>
-      <li>Fee: Producto + affiliate link (10% comisión)</li>
-      <li>Entregables: UGC orgánico</li>
-    </ul>
-  </li>
-</ul>
-
-<p><strong>Budget total seeding Fase 1 (Jul-Ago 2026):</strong> USD 10,000</p>
-</div>
-
-<!-- ROADMAP -->
-<h2>6. Roadmap de Ejecución (90 Días)</h2>
+<!-- TIMELINE -->
+<h2>6. Roadmap 90 Días · Milestones Críticos</h2>
 
 <div class="section">
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-date">DÍA 1-15 · Mayo 2026</div>
-    <h4>Fase 1: Compliance & Legal Setup</h4>
+    <div class="timeline-date">DÍA 0-30 · Junio 2026</div>
+    <h4>Fase 1: Setup Legal y Pre-Launch</h4>
     <ul>
-      <li>Constitución Apex Nativa S.A. (IGJ, AFIP, cuenta bancaria)</li>
-      <li>Registro ANMAT de 3 SKUs como suplementos dietarios</li>
-      <li>Certificación SENASA de importación</li>
-      <li>Decisión final tech stack (Yiqui vs. Gastón)</li>
-      <li>Kickoff con Southpost: setup WMS + API Shopify</li>
+      <li>Constitución MODE Argentina S.A. (escribanía + IGJ)</li>
+      <li>Alta AFIP: CUIT, claves fiscales, responsable inscripto</li>
+      <li>Presentación dossier ANMAT (3 SKUs) vía Comex Specialists</li>
+      <li>Contrato Southpost: warehouse agreement + SLA</li>
+      <li>Producción primer batch Brasil: PO 80,000 unidades</li>
     </ul>
-    <span class="tag">Responsable: Comex + Estudio DM + Gonzalo Farrus</span>
+    <span class="tag green">Responsable: Adsmart (legal) + Comex (regulatorio)</span>
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-date">DÍA 16-45 · Junio 2026</div>
-    <h4>Fase 2: Importación & Operaciones</h4>
+    <div class="timeline-date">DÍA 31-60 · Julio 2026</div>
+    <h4>Fase 2: Importación y Activación Digital</h4>
     <ul>
       <li>Embarque primer lote (80,000 unidades) desde Brasil vía marítima</li>
       <li>Nacionalización aduanera + traslado a depósito Southpost</li>
       <li>Setup Shopify: checkout, dLocal integration, políticas de envío</li>
-      <li>Onboarding GOAT Agency: brief creativo + planning H2</li>
+      <li>Planning creativo y media Adsmart: brief + roadmap H2</li>
       <li>Producción assets: fotoproducto, videos, banners</li>
     </ul>
     <span class="tag teal">Responsable: Adsmart + Comex + Southpost</span>
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-date">DÍA 46-60 · Julio 2026</div>
-    <h4>Fase 3: Soft Launch & Testing</h4>
+    <div class="timeline-date">DÍA 61-90 · Agosto 2026</div>
+    <h4>Fase 3: Soft Launch y Primeras Ventas</h4>
     <ul>
-      <li>Lanzamiento privado a lista de espera (500 early adopters)</li>
-      <li>Seeding a 20 influencers (micro + nano tiers)</li>
-      <li>Primeras campañas de Meta Ads (test de creatividades)</li>
+      <li>Aprobación ANMAT final (confirmación registro)</li>
+      <li>Soft launch: Influencer seeding (300 kits gratis)</li>
+      <li>Waitlist conversion: 500 early birds (20% off)</li>
+      <li>Media activation inicial: Meta + Google (budget USD 8,000)</li>
       <li>Optimización conversión Shopify (A/B testing checkout)</li>
       <li>Monitoreo logística: SLA de entrega, NPS post-compra</li>
     </ul>
-    <span class="tag purple">Responsable: GOAT + Adsmart</span>
+    <span class="tag purple">Responsable: Adsmart</span>
   </div>
 
   <div class="timeline-item">
@@ -996,7 +946,7 @@ strong {
       <li>Pop-up experiencial en Palermo (MODE Lab)</li>
       <li>Retargeting agresivo + email nurturing</li>
     </ul>
-    <span class="tag">Responsable: GOAT + Adsmart</span>
+    <span class="tag">Responsable: Adsmart</span>
   </div>
 </div>
 </div>
@@ -1087,7 +1037,7 @@ strong {
   <td>$800</td>
 </tr>
 <tr>
-  <td>Fee GOAT Agency (retainer)</td>
+  <td>Fee Adsmart Agency (retainer)</td>
   <td>$3,000</td>
 </tr>
 <tr>
