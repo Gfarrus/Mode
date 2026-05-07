@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOde Nutrition - Estrategia Argentina 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --negro: #000000;
+            --lima: #D4F900;
+            --teal: #00A8A1;
+            --purpura: #5143B6;
+            --dark-purple: #2B1D35;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--negro);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--negro) 0%, var(--dark-purple) 100%);
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(212, 249, 0, 0.2);
+            border: 1px solid rgba(212, 249, 0, 0.3);
+            background: linear-gradient(135deg, var(--negro) 0%, var(--dark-purple) 50%, var(--negro) 100%);
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 168, 161, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(81, 67, 182, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .slide > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* SLIDE 1: PORTADA */
+        .slide-1 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+        }
+
+        .mode-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            letter-spacing: 12px;
+            background: linear-gradient(90deg, var(--lima) 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 28px;
+            color: var(--lima);
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .subtitle-portada {
+            font-size: 24px;
+            color: var(--teal);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* SLIDE 2: MANIFIESTO */
+        .slide-2 {
+            justify-content: space-between;
+        }
+
+        .header-slide {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .header-icon {
+            font-size: 48px;
+            color: var(--lima);
+        }
+
+        .header-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .content-block {
+            padding: 30px;
+            background: rgba(0, 168, 161, 0.1);
+            border-left: 4px solid var(--teal);
+            border-radius: 4px;
+        }
+
+        .content-block.purple {
+            background: rgba(81, 67, 182, 0.1);
+            border-left-color: var(--purpura);
+        }
+
+        .content-block h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            color: var(--lima);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-block p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* SLIDE 3: PORTAFOLIO */
+        .slide-3 {
+            justify-content: space-between;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .product-card {
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(0, 168, 161, 0.15) 0%, rgba(81, 67, 182, 0.15) 100%);
+            border: 2px solid rgba(212, 249, 0, 0.3);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product-card.perform {
+            border-color: var(--lima);
+        }
+
+        .product-card.build {
+            border-color: var(--teal);
+        }
+
+        .product-card.rest {
+            border-color: var(--purpura);
+        }
+
+        .product-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .product-card.perform .product-icon {
+            color: var(--lima);
+        }
+
+        .product-card.build .product-icon {
+            color: var(--teal);
+        }
+
+        .product-card.rest .product-icon {
+            color: var(--purpura);
+        }
+
+        .product-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .product-specs {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #aaa;
+        }
+
+        .product-specs strong {
+            color: #fff;
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* SLIDE 4: MODELO MEDVI */
+        .slide-4 {
+            justify-content: space-between;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            gap: 15px;
+        }
+
+        .flow-step {
+            flex: 1;
+            padding: 25px;
+            background: rgba(212, 249, 0, 0.08);
+            border: 2px solid var(--lima);
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-step.ai {
+            border-color: var(--teal);
+            background: rgba(0, 168, 161, 0.08);
+        }
+
+        .flow-step.logistics {
+            border-color: var(--purpura);
+            background: rgba(81, 67, 182, 0.08);
+        }
+
+        .flow-step h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .flow-step p {
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .flow-arrow {
+            font-size: 24px;
+            color: var(--lima);
+            margin: 0 -5px;
+        }
+
+        /* SLIDE 5: COMUNICACIÓN */
+        .slide-5 {
+            justify-content: space-between;
+        }
+
+        .funnel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .funnel-stage {
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 249, 0, 0.1) 0%, rgba(0, 168, 161, 0.1) 100%);
+            border: 2px solid var(--lima);
+            border-radius: 8px;
+        }
+
+        .funnel-stage.mofu {
+            border-color: var(--teal);
+            background: linear-gradient(135deg, rgba(0, 168, 161, 0.1) 0%, rgba(81, 67, 182, 0.1) 100%);
+        }
+
+        .funnel-stage.bofu {
+            border-color: var(--purpura);
+            background: linear-gradient(135deg, rgba(81, 67, 182, 0.1) 0%, rgba(212, 249, 0, 0.1) 100%);
+        }
+
+        .funnel-stage h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .funnel-stage ul {
+            list-style: none;
+        }
+
+        .funnel-stage li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #aaa;
+        }
+
+        .funnel-stage li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+        }
+
+        /* SLIDE 6: LOGÍSTICA */
+        .slide-6 {
+            justify-content: space-between;
+        }
+
+        .logistics-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .logistics-item {
+            padding: 30px;
+            background: rgba(0, 168, 161, 0.1);
+            border: 2px solid var(--teal);
+            border-radius: 8px;
+        }
+
+        .logistics-item.operational {
+            background: rgba(81, 67, 182, 0.1);
+            border-color: var(--purpura);
+        }
+
+        .logistics-item h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            color: var(--lima);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logistics-item p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #aaa;
+        }
+
+        /* SLIDE 7: DLOCAL */
+        .slide-7 {
+            justify-content: space-between;
+        }
+
+        .financial-model {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .model-section {
+            padding: 30px;
+            background: rgba(212, 249, 0, 0.08);
+            border-left: 4px solid var(--lima);
+            border-radius: 4px;
+        }
+
+        .model-section.split {
+            background: rgba(0, 168, 161, 0.08);
+            border-left-color: var(--teal);
+        }
+
+        .model-section h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: var(--lima);
+            letter-spacing: 1px;
+        }
+
+        .model-section.split h4 {
+            color: var(--teal);
+        }
+
+        .model-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        /* SLIDE 8: COSTOS */
+        .slide-8 {
+            justify-content: space-between;
+        }
+
+        .cost-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+        }
+
+        .cost-table th {
+            background: linear-gradient(90deg, var(--lima), var(--teal));
+            color: var(--negro);
+            padding: 20px;
+            text-align: left;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .cost-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(212, 249, 0, 0.2);
+            font-size: 14px;
+        }
+
+        .cost-table tr:hover {
+            background: rgba(0, 168, 161, 0.1);
+        }
+
+        .cost-table .label {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            color: var(--lima);
+        }
+
+        .cost-table .amount {
+            color: var(--teal);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .cost-total {
+            background: linear-gradient(90deg, rgba(0, 168, 161, 0.2) 0%, rgba(81, 67, 182, 0.2) 100%);
+            border-top: 2px solid var(--purpura);
+            border-bottom: 2px solid var(--purpura);
+        }
+
+        .cost-total .label {
+            color: var(--purpura);
+            font-size: 16px;
+        }
+
+        .cost-total .amount {
+            color: var(--lima);
+            font-size: 16px;
+        }
+
+        /* SLIDE 9: ROADMAP */
+        .slide-9 {
+            justify-content: space-between;
+        }
+
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .roadmap-phase {
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(0, 168, 161, 0.15) 0%, rgba(81, 67, 182, 0.15) 100%);
+            border: 2px solid var(--teal);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .roadmap-phase.phase-2 {
+            border-color: var(--lima);
+        }
+
+        .roadmap-phase.phase-3 {
+            border-color: var(--purpura);
+        }
+
+        .roadmap-phase.phase-4 {
+            border-color: var(--teal);
+        }
+
+        .phase-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--lima);
+            margin-bottom: 10px;
+        }
+
+        .phase-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .phase-duration {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .phase-activities {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* CONTROLES DE NAVEGACIÓN */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, var(--lima) 0%, var(--teal) 100%);
+            color: var(--negro);
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 249, 0, 0.3);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 249, 0, 0.5);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            background: rgba(212, 249, 0, 0.1);
+            border: 1px solid var(--lima);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            color: var(--lima);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER SLIDES */
+        .footer-slide {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 249, 0, 0.2);
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer-slide .partners {
+            display: flex;
+            gap: 30px;
+            font-size: 11px;
+        }
+
+        .footer-slide .partners strong {
+            color: var(--lima);
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- SLIDE 1: PORTADA -->
+        <div class="slide slide-1 active">
+            <div class="logo-container">
+                <div class="mode-title">MODE</div>
+                <div class="tagline">El cuerpo es una engranaje de precisión</div>
+                <div class="subtitle-portada">Estrategia Argentina 2026</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: MANIFIESTO -->
+        <div class="slide slide-2">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-bullseye header-icon"></i>
+                    <h1 class="header-title">Posicionamiento</h1>
+                </div>
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h3>El Vacío en Argentina</h3>
+                        <p>El mercado local carece de una marca premium que integre Performance + Wellness en una sola propuesta. MOde ocupa este cuadrante inexplorado donde la tecnología biohacking y el cuidado holístico convergen.</p>
+                    </div>
+                    <div class="content-block purple">
+                        <h3>Manifiesto MOde</h3>
+                        <p>"Somos para aquellos que entienden que optimizar el cuerpo es optimizar la mente. Cafeína con propósito. Creatina con precisión. Descanso con ciencia."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>MOde Nutrition | Brasil</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: PORTAFOLIO -->
+        <div class="slide slide-3">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-pills header-icon"></i>
+                    <h1 class="header-title">Portafolio</h1>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card perform">
+                        <div class="product-icon"><i class="fas fa-bolt"></i></div>
+                        <h2 class="product-name">Perform</h2>
+                        <div class="product-specs">
+                            Cafeína Anhidra 200mg
+                            <strong>+</strong>
+                            Citrulina Malato 6g
+                            <strong>+</strong>
+                            Beta-Alanina 3.2g
+                            <br><strong>Uso:</strong> Pre-entrenamiento + Fokus
+                        </div>
+                    </div>
+                    <div class="product-card build">
+                        <div class="product-icon"><i class="fas fa-dumbbell"></i></div>
+                        <h2 class="product-name">Build</h2>
+                        <div class="product-specs">
+                            Creatina Creapure® 5g
+                            <strong>+</strong>
+                            HMB 3g
+                            <strong>+</strong>
+                            Vitamina D3 2000IU
+                            <br><strong>Uso:</strong> Post-entrenamiento + Masa muscular
+                        </div>
+                    </div>
+                    <div class="product-card rest">
+                        <div class="product-icon"><i class="fas fa-moon"></i></div>
+                        <h2 class="product-name">Rest</h2>
+                        <div class="product-specs">
+                            GABA 500mg
+                            <strong>+</strong>
+                            Magnesio Bisglicinado 350mg
+                            <strong>+</strong>
+                            L-Teanina 100mg
+                            <br><strong>Uso:</strong> Recovery + Sueño profundo
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>Gummies vitamínicas premium | Presentación 30 dosis</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: MODELO MEDVI -->
+        <div class="slide slide-4">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-cogs header-icon"></i>
+                    <h1 class="header-title">Modelo MEDVI</h1>
+                </div>
+                <p style="color: #aaa; margin-bottom: 30px; font-size: 14px;">Flujo integrado: Diagnóstico → Validación → Fulfillment → Care</p>
+                <div class="flow-diagram">
+                    <div class="flow-step ai">
+                        <i class="fas fa-brain" style="font-size: 32px; color: var(--teal); margin-bottom: 10px;"></i>
+                        <h4>Diagnóstico</h4>
+                        <p>Triage AI personalizado</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">
+                        <i class="fas fa-check-circle" style="font-size: 32px; color: var(--lima); margin-bottom: 10px;"></i>
+                        <h4>Validación</h4>
+                        <p>OpenLoop + Medical Review</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step logistics">
+                        <i class="fas fa-boxes" style="font-size: 32px; color: var(--purpura); margin-bottom: 10px;"></i>
+                        <h4>Fulfillment</h4>
+                        <p>Southpost Argentina</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step ai">
+                        <i class="fas fa-headset" style="font-size: 32px; color: var(--teal); margin-bottom: 10px;"></i>
+                        <h4>Care</h4>
+                        <p>AI Support 24/7</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>Plataforma omnichannel con IA y logística integrada</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: COMUNICACIÓN -->
+        <div class="slide slide-5">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-megaphone header-icon"></i>
+                    <h1 class="header-title">Estrategia de Comunicación</h1>
+                </div>
+                <div class="funnel-grid">
+                    <div class="funnel-stage">
+                        <h4>TOFU</h4>
+                        <p style="color: #999; margin-bottom: 15px; font-size: 12px;">Top of Funnel</p>
+                        <ul>
+                            <li>Influencers Biohacking (50-200k)</li>
+                            <li>Content educativo</li>
+                            <li>YouTube Long-form</li>
+                            <li>Webinars gratis</li>
+                            <li>Community Building</li>
+                        </ul>
+                    </div>
+                    <div class="funnel-stage mofu">
+                        <h4>MOFU</h4>
+                        <p style="color: #999; margin-bottom: 15px; font-size: 12px;">Middle of Funnel</p>
+                        <ul>
+                            <li>Adsmart Machine (IA)</li>
+                            <li>Meta Ads segmentado</li>
+                            <li>TikTok For Business</li>
+                            <li>Retargeting dinámico</li>
+                            <li>Lead magnet (guía)</li>
+                        </ul>
+                    </div>
+                    <div class="funnel-stage bofu">
+                        <h4>BOFU</h4>
+                        <p style="color: #999; margin-bottom: 15px; font-size: 12px;">Bottom of Funnel</p>
+                        <ul>
+                            <li>Retargeting Shopify</li>
+                            <li>Landing page conversion</li>
+                            <li>Checkout optimizado</li>
+                            <li>Warranty + Garantía</li>
+                            <li>Cross-sell automático</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>Media planning e inversión bajo gestión Adsmart Media</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: LOGÍSTICA -->
+        <div class="slide slide-6">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-truck header-icon"></i>
+                    <h1 class="header-title">Operación Southpost</h1>
+                </div>
+                <div class="logistics-box">
+                    <div class="logistics-item">
+                        <h3><i class="fas fa-warehouse" style="margin-right: 10px;"></i>Almacenamiento</h3>
+                        <p>Centro de fulfillment climatizado en Buenos Aires. Stock mínimo garantizado 60 días. Rotación FIFO. Control de calidad en ingreso y egreso.</p>
+                    </div>
+                    <div class="logistics-item operational">
+                        <h3><i class="fas fa-robot" style="margin-right: 10px;"></i>Picking Especializado</h3>
+                        <p>Sistema de picking automático para órdenes multisku. Embalaje premium con branding MOde. Trazabilidad QR en cada paquete.</p>
+                    </div>
+                    <div class="logistics-item">
+                        <h3><i class="fas fa-map" style="margin-right: 10px;"></i>Distribución Nacional</h3>
+                        <p>Cobertura 100% de Argentina. Envíos 24-48h en AMBA. Envíos 3-5 días en interior. Seguimiento real-time para cliente.</p>
+                    </div>
+                    <div class="logistics-item operational">
+                        <h3><i class="fas fa-reply-all" style="margin-right: 10px;"></i>Devoluciones & RMA</h3>
+                        <p>Sistema de retorno simplificado. Reembolso 15 días. Logística inversa coordinada. Garantía de reemplazo sin preguntas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>Partner logístico oficial para Argentina</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: DLOCAL -->
+        <div class="slide slide-7">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-credit-card header-icon"></i>
+                    <h1 class="header-title">Estructura Financiera dLocal</h1>
+                </div>
+                <div class="financial-model">
+                    <div class="model-section">
+                        <h4><i class="fas fa-university" style="margin-right: 10px;"></i>Cobro Local</h4>
+                        <p>✓ Tarjetas de crédito (6-12 cuotas)</p>
+                        <p>✓ Tarjetas de débito</p>
+                        <p>✓ Billeteras digitales (Mercado Pago, Ualá)</p>
+                        <p>✓ Transferencia bancaria</p>
+                        <p><strong style="color: var(--lima);">Conversión automática ARS → USD</strong></p>
+                    </div>
+                    <div class="model-section split">
+                        <h4><i class="fas fa-code-branch" style="margin-right: 10px;"></i>Split Payment</h4>
+                        <p>✓ dLocal retiene comisión local (2-3%)</p>
+                        <p>✓ MOde recibe en cuenta Brasil</p>
+                        <p>✓ Costos operativos deducibles</p>
+                        <p>✓ Liquidación automática 48h</p>
+                        <p><strong style="color: var(--teal);">Zero-friction para expansión</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>Gateway de pagos multinacional dLocal integrado</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: COSTOS -->
+        <div class="slide slide-8">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-chart-bar header-icon"></i>
+                    <h1 class="header-title">Inversión Inicial & Media</h1>
+                </div>
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Detalle</th>
+                            <th style="text-align: right;">Inversión (ARS)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="label">Setup & Onboarding</td>
+                            <td>Infraestructura, integraciones, training</td>
+                            <td class="amount" style="text-align: right;">$6,000,000</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Media Mensual (3 meses)</td>
+                            <td>Meta, TikTok, YouTube (Teaser + Launch)</td>
+                            <td class="amount" style="text-align: right;">$12,000,000</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Influencers</td>
+                            <td>15-20 talentos micro/macro</td>
+                            <td class="amount" style="text-align: right;">$2,500,000</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Agency Fee (3 meses)</td>
+                            <td>Adsmart Media - Gestión + IA Optimization</td>
+                            <td class="amount" style="text-align: right;">$6,000,000</td>
+                        </tr>
+                        <tr class="cost-total">
+                            <td class="label">INVERSIÓN TOTAL (Q1)</td>
+                            <td><strong>Desembarco Argentina</strong></td>
+                            <td class="amount" style="text-align: right;"><strong>$26,500,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px; font-size: 12px; color: #888;"><strong style="color: var(--lima);">Nota:</strong> Proyección: ROAS 3:1 en mes 2 (ROI break-even mes 4)</p>
+            </div>
+            <div class="footer-slide">
+                <span>Presupuesto en Pesos Argentinos (ARS) | Ciclo Q1 2026</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: ROADMAP -->
+        <div class="slide slide-9">
+            <div>
+                <div class="header-slide">
+                    <i class="fas fa-road header-icon"></i>
+                    <h1 class="header-title">Roadmap 2026</h1>
+                </div>
+                <div class="roadmap-container">
+                    <div class="roadmap-phase">
+                        <div class="phase-number">01</div>
+                        <div class="phase-name">Setup</div>
+                        <div class="phase-duration">Enero - Febrero</div>
+                        <div class="phase-activities">✓ Infraestructura dLocal<br>✓ Integración Southpost<br>✓ Validaciones médicas<br>✓ Setup influencers</div>
+                    </div>
+                    <div class="roadmap-phase phase-2">
+                        <div class="phase-number">02</div>
+                        <div class="phase-name">Teaser</div>
+                        <div class="phase-duration">Febrero - Marzo</div>
+                        <div class="phase-activities">✓ Content pre-launch<br>✓ Community seeding<br>✓ Influencer teasers<br>✓ Waitlist building</div>
+                    </div>
+                    <div class="roadmap-phase phase-3">
+                        <div class="phase-number">03</div>
+                        <div class="phase-name">Launch</div>
+                        <div class="phase-duration">Marzo - Abril</div>
+                        <div class="phase-activities">✓ Go-live Shopify<br>✓ Media blitz<br>✓ Influencer campaign<br>✓ PR + Earned media</div>
+                    </div>
+                    <div class="roadmap-phase phase-4">
+                        <div class="phase-number">04</div>
+                        <div class="phase-name">Scaling</div>
+                        <div class="phase-duration">Mayo - Diciembre</div>
+                        <div class="phase-activities">✓ Expansion retail<br>✓ New SKUs<br>✓ Regional penetration<br>✓ B2B partnerships</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-slide">
+                <span>Ejecución integrada con hitos de KPI medibles</span>
+                <div class="partners"><strong>Estrategia:</strong> Adsmart Media | <strong>Logística:</strong> Southpost</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTROLES DE NAVEGACIÓN -->
+    <div class="controls">
+        <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)"><i class="fas fa-chevron-left" style="margin-right: 8px;"></i>Anterior</button>
+        <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">9</span></div>
+        <button class="nav-button" id="nextBtn" onclick="changeSlide(1)"><i class="fas fa-chevron-right" style="margin-right: 8px;"></i>Siguiente</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            
+            // Actualizar estado de botones
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) changeSlide(-1);
+            if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) changeSlide(1);
+        });
+
+        // Inicializar
+        showSlide(0);
+    </script>
+</body>
+</html>
